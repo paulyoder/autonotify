@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Linq;
-using Castle.Core.Interceptor;
+using Castle.DynamicProxy;
 using log4net;
 using StructureMap.AutoNotify.Extensions;
 

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
-using Castle.Core.Interceptor;
+using Castle.DynamicProxy;
 using StructureMap.AutoNotify.Extensions;
 
 namespace StructureMap.AutoNotify.Interception

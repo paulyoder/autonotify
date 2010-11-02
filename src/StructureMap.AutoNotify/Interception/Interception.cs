@@ -1,4 +1,4 @@
-﻿using Castle.Core.Interceptor;
+﻿using Castle.DynamicProxy;
 using log4net;
 using StructureMap.AutoNotify.Extensions;
 

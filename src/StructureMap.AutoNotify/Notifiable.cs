@@ -10,7 +10,7 @@ namespace StructureMap.AutoNotify
 {
     public class Notifiable
     {
-        static readonly ILog logger = LogManager.GetLogger(typeof(AutoNotifyAttrConvention));
+        static readonly ILog logger = LogManager.GetLogger("Notifiable");
 
         public static object MakeForInterface(Type type, object obj, FireOptions fireOption, ProxyGenerator generator, DependencyMap dependencyMap)
         {

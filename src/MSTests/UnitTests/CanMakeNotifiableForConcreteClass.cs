@@ -1,32 +1,32 @@
 ﻿using System.ComponentModel;
 using Castle.DynamicProxy;
-using NUnit.Framework;
 using StructureMap.AutoNotify;
 using Tests.Util;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests.UnitTests
 {
-    [TestFixture]
+    [TestClass]
     public class CanMakeNotifiableForConcreteClass
     {
-        [TestCase]
+        [TestMethod]
         public void ShouldReturnAnINPCForConcreteObjectNoCtorArgs()
         {
             var cat = Notifiable.MakeForClassGeneric<LolCat>(FireOptions.Always, new ProxyGenerator(), new DependencyMap());
 
-            Assert.That(cat, Is.InstanceOf<INotifyPropertyChanged>());
+            Assert.IsTrue(cat is INotifyPropertyChanged);
         }
 
-        [TestCase]
+        [TestMethod]
         public void ShouldReturnAnINPCForConcreteObjectWithCtorArgs()
         {
             var obj = Notifiable.MakeForClassGeneric<ClassWithDependency>(FireOptions.Always, new ProxyGenerator(), new DependencyMap(), new Dependency { Value = 4 });
 
-            Assert.That(obj, Is.InstanceOf<INotifyPropertyChanged>());
-            Assert.That(obj.Dependency.Value, Is.EqualTo(4));
+            Assert.IsTrue(obj is INotifyPropertyChanged);
+            Assert.IsTrue(obj.Dependency.Value == 4);
         }
 
-        [TestCase]
+        [TestMethod]
         public void ShouldFireChangedWhenVirtualPropertySetOnMadeObject()
         {
             var cat = Notifiable.MakeForClassGeneric<LolCat>(FireOptions.Always, new ProxyGenerator(), new DependencyMap());
@@ -37,10 +37,10 @@ namespace Tests.UnitTests
 
             cat.Greeting = "buzz off";
 
-            Assert.That(tracker.WasCalled);
+            Assert.IsTrue(tracker.WasCalled);
         }
 
-        [TestCase]
+        [TestMethod]
         public void ShouldNotFireChangedWhenVirtualPropertySetAndChangedOnMadeObjectWithChangeOnlyOption()
         {
             var cat = Notifiable.MakeForClassGeneric<LolCat>(FireOptions.OnlyOnChange, new ProxyGenerator(), new DependencyMap());
@@ -52,10 +52,10 @@ namespace Tests.UnitTests
             (cat as INotifyPropertyChanged).PropertyChanged += tracker;
             cat.Greeting = "value";
 
-            Assert.That(tracker.WasNotCalled);
+            Assert.IsTrue(tracker.WasNotCalled);
         }
 
-        [TestCase]
+        [TestMethod]
         public void ShouldNotFireChangedWhenNonVirtualPropertyChangedOnMadeObject()
         {
             var cat = Notifiable.MakeForClassGeneric<LolCat>(FireOptions.Always, new ProxyGenerator(), new DependencyMap());
@@ -66,7 +66,7 @@ namespace Tests.UnitTests
 
             cat.Color = "purple";
 
-            Assert.That(tracker.WasNotCalled);
+            Assert.IsTrue(tracker.WasNotCalled);
         }
 
         public class LolCat

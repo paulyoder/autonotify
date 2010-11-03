@@ -1,20 +1,20 @@
 ﻿using System.ComponentModel;
 using Castle.DynamicProxy;
-using NUnit.Framework;
 using StructureMap.AutoNotify;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests.Examples.NotifiableUsage
 {
-    [TestFixture]
+    [TestClass]
     public class NotifiableForInterface
     {
-        [Test]
+        [TestMethod]
         public void CanMakeAnObjectNotifiableWithInterface()
         {
             var foo = new Foo();
             var notifiableFoo = Notifiable.MakeForInterface(typeof(IFoo), foo, FireOptions.Always, new ProxyGenerator(), DependencyMap.Empty);
 
-            Assert.That(notifiableFoo is INotifyPropertyChanged);
+            Assert.IsTrue(notifiableFoo is INotifyPropertyChanged);
         }
 
         public interface IFoo

@@ -1,24 +1,24 @@
 ﻿using System;
 using System.ComponentModel;
 using Castle.DynamicProxy;
-using NUnit.Framework;
 using StructureMap.AutoNotify;
 using Tests.Util;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests.UnitTests
 {
-    [TestFixture]
+    [TestClass]
     public class CanMakeNotifiableForInterface
     {
-        [TestCase]
+        [TestMethod]
         public void ShouldReturnAnINPCForInterfacedObject()
         {
             var greeter = Notifiable.MakeForInterfaceGeneric<IGreeter>(new LolCat(), FireOptions.Always, new ProxyGenerator(), new DependencyMap());
 
-            Assert.That(greeter, Is.InstanceOf<INotifyPropertyChanged>());
+            Assert.IsTrue(greeter is INotifyPropertyChanged);
         }
 
-        [TestCase]
+        [TestMethod]
         public void ShouldFireChangedWhenPropertyChangedOnMadeObject()
         {
             var greeter = Notifiable.MakeForInterfaceGeneric<IGreeter>(new LolCat(), FireOptions.Always, new ProxyGenerator(), new DependencyMap());
@@ -29,16 +29,22 @@ namespace Tests.UnitTests
 
             greeter.Greeting = "buzz off";
 
-            Assert.That(tracker.WasCalled);
+            Assert.IsTrue(tracker.WasCalled);
         }
 
-        [TestCase]
+        [TestMethod]
         public void ShouldThrowWhenGiveNonInterface()
         {
-            Assert.Throws<InvalidOperationException>(() =>
+            var exceptionThrown = false;
+            try
             {
                 Notifiable.MakeForInterfaceGeneric<LolCat>(new LolCat(), FireOptions.Always, new ProxyGenerator(), new DependencyMap());
-            });
+            }
+            catch (InvalidOperationException)
+            {
+                exceptionThrown = true;
+            }
+            Assert.IsTrue(exceptionThrown);
         }
 
         public class LolCat : IGreeter

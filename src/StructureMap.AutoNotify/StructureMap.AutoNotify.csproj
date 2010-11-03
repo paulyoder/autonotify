@@ -36,9 +36,6 @@
       <HintPath>..\..\lib\Castle.Core.dll</HintPath>
     </Reference>
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL" />
-    <Reference Include="StructureMap">
-      <HintPath>..\..\lib\StructureMap.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -51,8 +48,6 @@
       <Link>CommonAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="AutoNotifyAttribute.cs" />
-    <Compile Include="AutoNotifyAttrConvention.cs" />
-    <Compile Include="AutoNotifyPredicateConvention.cs" />
     <Compile Include="DependencyMap.cs" />
     <Compile Include="DependsOnAttribute.cs" />
     <Compile Include="Extensions\EnumerableExt.cs" />
@@ -62,7 +57,6 @@
     <Compile Include="Interception\IInterception.cs" />
     <Compile Include="Interception\Interception.cs" />
     <Compile Include="Interception\InvocationInterception.cs" />
-    <Compile Include="LooseConstructorInstance.cs" />
     <Compile Include="Notifiable.cs" />
     <Compile Include="Interception\OnlyOnChangePropertySetterInterception.cs" />
     <Compile Include="Interception\PropertyChangedAddInterception.cs" />

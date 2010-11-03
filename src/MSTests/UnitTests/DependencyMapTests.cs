@@ -1,33 +1,33 @@
-﻿using NUnit.Framework;
-using StructureMap.AutoNotify;
+﻿using StructureMap.AutoNotify;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests.UnitTests
 {
-    [TestFixture]
+    [TestClass]
     public class DependencyMapTests
     {
-        [Test]
+        [TestMethod]
         public void CanExtractSourceMemberFromExpression()
         {
             var map = new FooMap();
 
-            Assert.That(map.Map[0].SourcePropName, Is.EqualTo("Value"));
+            Assert.IsTrue(map.Map[0].SourcePropName == "Value");
         }
 
-        [Test]
+        [TestMethod]
         public void CanExtractTargetMemberFromExpression()
         {
             var map = new FooMap();
 
-            Assert.That(map.Map[0].TargetPropName, Is.EqualTo("StringValue"));
+            Assert.IsTrue(map.Map[0].TargetPropName == "StringValue");
         }
 
-        [Test]
+        [TestMethod]
         public void CanExtractSourceMemberFromNestedPropExpression()
         {
             var map = new FooMap();
 
-            Assert.That(map.Map[1].SourcePropName, Is.EqualTo("Bar.Value"));
+            Assert.IsTrue(map.Map[1].SourcePropName == "Bar.Value");
         }
 
         class Foo

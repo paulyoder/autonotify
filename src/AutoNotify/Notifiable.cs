@@ -38,6 +38,11 @@ namespace AutoNotify
             return typed.Invoke(null, new object[] { fireOption, generator, dependencyMap, ctorArgs });
         }
 
+        public static T Make<T>(FireOptions fireOption = FireOptions.OnlyOnChange, ProxyGenerator generator = null, DependencyMap dependencyMap = null, params object[] ctorArgs) where T : class
+        {
+            return MakeForClassGeneric<T>(fireOption, generator, dependencyMap, ctorArgs);
+        }
+
         public static T MakeForClassGeneric<T>(FireOptions fireOption = FireOptions.OnlyOnChange, ProxyGenerator generator = null, DependencyMap dependencyMap = null, params object[] ctorArgs) where T : class
         {
             if (generator == null)

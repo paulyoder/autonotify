@@ -16,6 +16,14 @@ namespace Tests.Examples.NotifiableUsage
             Assert.IsTrue(notifiableFoo is INotifyPropertyChanged);
         }
 
+        [TestMethod]
+        public void CanMakeAnObjectNotifiableWithMakeMethod()
+        {
+            var notifiableFoo = Notifiable.Make<Foo>();
+
+            Assert.IsTrue(notifiableFoo is INotifyPropertyChanged);
+        }
+
         public class Foo
         {
             public virtual string Value { get; set; }

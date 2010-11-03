@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using Castle.DynamicProxy;
 
-namespace StructureMap.AutoNotify.Interception
+namespace AutoNotify.Interception
 {
     class PropertyChangedRemoveInterception : IInterception
     {

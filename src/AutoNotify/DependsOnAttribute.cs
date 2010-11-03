@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace StructureMap.AutoNotify
+namespace AutoNotify
 {
     public class DependsOnAttribute : Attribute
     {

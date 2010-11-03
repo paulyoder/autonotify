@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
 using Castle.DynamicProxy;
-using StructureMap.AutoNotify.Extensions;
+using AutoNotify.Extensions;
 
-namespace StructureMap.AutoNotify.Interception
+namespace AutoNotify.Interception
 {
     class WrappingInterception : IInterception
     {

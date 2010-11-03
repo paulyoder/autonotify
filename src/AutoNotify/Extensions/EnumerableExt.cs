@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace StructureMap.AutoNotify.Extensions
+namespace AutoNotify.Extensions
 {
     public static class EnumerableExt
     {

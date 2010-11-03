@@ -1,4 +1,4 @@
-﻿namespace StructureMap.AutoNotify.Interception
+﻿namespace AutoNotify.Interception
 {
     public interface IInterception
     {

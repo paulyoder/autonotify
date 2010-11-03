@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace StructureMap.AutoNotify.Extensions
+namespace AutoNotify.Extensions
 {
     public static class Extensions
     {

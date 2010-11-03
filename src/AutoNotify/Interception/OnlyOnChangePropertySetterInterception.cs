@@ -1,8 +1,8 @@
 ﻿using Castle.DynamicProxy;
 using log4net;
-using StructureMap.AutoNotify.Extensions;
+using AutoNotify.Extensions;
 
-namespace StructureMap.AutoNotify.Interception
+namespace AutoNotify.Interception
 {
     class OnlyOnChangePropertySetterInterception : IInterception
     {

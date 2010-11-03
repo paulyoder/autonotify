@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
-using StructureMap.AutoNotify.Extensions;
+using AutoNotify.Extensions;
 
-namespace StructureMap.AutoNotify
+namespace AutoNotify
 {
     public class DependencyMap<T> : DependencyMap
     {

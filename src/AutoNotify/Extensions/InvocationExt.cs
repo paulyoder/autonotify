@@ -1,6 +1,6 @@
 ﻿using Castle.DynamicProxy;
 
-namespace StructureMap.AutoNotify.Extensions
+namespace AutoNotify.Extensions
 {
     static class InvocationExt
     {

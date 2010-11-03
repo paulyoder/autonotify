@@ -1,4 +1,4 @@
-﻿using StructureMap.AutoNotify;
+﻿using AutoNotify;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests.UnitTests

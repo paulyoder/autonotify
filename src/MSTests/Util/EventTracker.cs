@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
-using StructureMap.AutoNotify.Extensions;
+using AutoNotify.Extensions;
 
 namespace Tests.Util
 {

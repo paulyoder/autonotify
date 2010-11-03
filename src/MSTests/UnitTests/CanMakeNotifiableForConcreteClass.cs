@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 using Castle.DynamicProxy;
-using StructureMap.AutoNotify;
+using AutoNotify;
 using Tests.Util;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

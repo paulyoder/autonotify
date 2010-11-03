@@ -3,7 +3,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace StructureMap.AutoNotify.Extensions
+namespace AutoNotify.Extensions
 {
     public static class ReflectionExt
     {

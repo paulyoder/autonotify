@@ -1,6 +1,6 @@
 ﻿using Castle.DynamicProxy;
 
-namespace StructureMap.AutoNotify.Interception
+namespace AutoNotify.Interception
 {
     class InvocationInterception : IInterception
     {

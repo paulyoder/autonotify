@@ -4,9 +4,9 @@ using System.Linq;
 using Castle.Core;
 using Castle.DynamicProxy;
 using log4net;
-using StructureMap.AutoNotify.Extensions;
+using AutoNotify.Extensions;
 
-namespace StructureMap.AutoNotify
+namespace AutoNotify
 {
     public class Notifiable
     {

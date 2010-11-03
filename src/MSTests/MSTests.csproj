@@ -57,9 +57,9 @@
     <Compile Include="Util\EventTracker.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\StructureMap.AutoNotify\StructureMap.AutoNotify.csproj">
+    <ProjectReference Include="..\AutoNotify\AutoNotify.csproj">
       <Project>{0908B437-1A2D-445A-8582-350F87310138}</Project>
-      <Name>StructureMap.AutoNotify</Name>
+      <Name>AutoNotify</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

@@ -8,8 +8,8 @@
     <ProjectGuid>{0908B437-1A2D-445A-8582-350F87310138}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>StructureMap.AutoNotify</RootNamespace>
-    <AssemblyName>StructureMap.AutoNotify</AssemblyName>
+    <RootNamespace>AutoNotify</RootNamespace>
+    <AssemblyName>AutoNotify</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

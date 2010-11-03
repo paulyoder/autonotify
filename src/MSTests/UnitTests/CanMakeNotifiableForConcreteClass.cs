@@ -69,6 +69,24 @@ namespace Tests.UnitTests
             Assert.IsTrue(tracker.WasNotCalled);
         }
 
+        [TestMethod]
+        public void FireOptionsShouldDefaultToOnlyOnChange()
+        {
+            var cat = Notifiable.MakeForClassGeneric<LolCat>();
+
+            var tracker = new EventTracker<PropertyChangedEventHandler>();
+
+
+            cat.Greeting = "value";
+            (cat as INotifyPropertyChanged).PropertyChanged += tracker;
+            cat.Greeting = "value";
+
+            Assert.IsTrue(tracker.WasNotCalled);
+
+            cat.Greeting = "hello";
+            Assert.IsTrue(tracker.WasCalled);
+        }
+
         public class LolCat
         {
             public LolCat()

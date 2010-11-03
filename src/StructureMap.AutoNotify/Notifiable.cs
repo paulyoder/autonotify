@@ -38,8 +38,13 @@ namespace StructureMap.AutoNotify
             return typed.Invoke(null, new object[] { fireOption, generator, dependencyMap, ctorArgs });
         }
 
-        public static T MakeForClassGeneric<T>(FireOptions fireOption, ProxyGenerator generator, DependencyMap dependencyMap, params object[] ctorArgs) where T : class
+        public static T MakeForClassGeneric<T>(FireOptions fireOption = FireOptions.OnlyOnChange, ProxyGenerator generator = null, DependencyMap dependencyMap = null, params object[] ctorArgs) where T : class
         {
+            if (generator == null)
+                generator = new ProxyGenerator();
+            if (dependencyMap == null)
+                dependencyMap = new DependencyMap();
+
             var nonVirtualProps = typeof(T)
                 .GetProperties()
                 .Select(prop => new { prop.Name, Setter = prop.GetSetMethod() })
